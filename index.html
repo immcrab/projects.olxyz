@@ -154,6 +154,10 @@
 <body>
 
     <a href="https://owenlee.xyz" class="home-btn">← Home</a>
+    
+    <div class="nav-bar" style="position: fixed; top: 20px; right: 20px; display: flex; gap: 10px; z-index: 100;">
+        <button id="devlogBtn" class="home-btn" style="position: static; background: #c5ffea; color: #1a1a1a;">📝 Dev Logs</button>
+    </div>
 
     <h1>My Projects</h1>
     <p>Check out what I've been building</p>
@@ -173,5 +177,15 @@
         <img class="whitearrow" src="../resources/Images/whitearrow.webp" alt="Arrow Decor" width="120">
     </div>
 
+    <script>
+        // Initialize Devlog System
+        const devlogScript = document.createElement('script');
+        devlogScript.src = '../devlog/devlog.js';
+        devlogScript.onload = () => {
+            DevlogSystem.init();
+            DevlogSystem.addDevlogButtonToNav();
+        };
+        document.head.appendChild(devlogScript);
+    </script>
 </body>
 </html>
